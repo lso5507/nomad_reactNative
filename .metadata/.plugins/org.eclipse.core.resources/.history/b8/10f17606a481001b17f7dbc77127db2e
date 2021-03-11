@@ -1,0 +1,47 @@
+package com.sga.version.Service;
+import java.io.File;
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.sga.version.VO.DataVO;
+
+@Service
+public class MainService {
+	@Autowired
+	DataVO dataVO;
+	public void vaildate() {
+		
+	}
+	public int view(){
+	// ===========================재귀함수 이용해 디렉토리 목록 가져오기=================================
+	
+		try {
+			String path = dataVO.folder.getPath();
+			ArrayList<String> list = new ArrayList<String>();
+			if(dataVO.getPackageName()!=null) {
+				for (final String entry: dataVO.getPackageName())
+					path+="\\"+entry;
+					System.out.println("PATH::"+path);
+			}
+			File file = new File(path);
+		    for (final File fileEntry : file.listFiles()) {
+		    	list.add(fileEntry.getName());	
+
+		    }	
+		}
+			catch (Exception e) {
+				e.printStackTrace();
+				return 0;
+			}
+	    return 1;
+	
+	//===========================재귀함수 이용해 디렉토리 목록 가져오기 =================================
+	}
+
+	
+}
+
+

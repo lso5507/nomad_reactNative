@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Nomad Coder Clone Coding",
+    "githubUrl": "https://github.com/lso5507/nomad_reactNative"
   }
 }
